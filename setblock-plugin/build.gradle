@@ -1,0 +1,35 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+shadowJar {
+    archiveName 'SetBlockPlugin.jar'
+    relocate 'io.papermc.lib', 'io.github.agenttroll.setblock.paperlib'
+}
+
+processResources {
+    expand project.properties
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots"
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    maven {
+        url 'https://papermc.io/repo/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT'
+
+    implementation "io.papermc:paperlib:1.0.2"
+
+    implementation project(':setblock-common')
+    implementation project(':setblock-nms')
+    implementation project(':setblock-nms-v1_15')
+}

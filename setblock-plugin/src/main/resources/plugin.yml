@@ -1,0 +1,5 @@
+main: io.github.agenttroll.setblock.SetBlockPlugin
+version: "1.0-SNAPSHOT"
+name: SetBlock
+
+api-version: "1.15"

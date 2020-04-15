@@ -1,0 +1,3 @@
+include 'setblock-plugin','setblock-nms', 'setblock-nms-v1_15'
+include 'setblock-common'
+
