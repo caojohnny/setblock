@@ -17,6 +17,7 @@ public class PreparedBulkSetEntry115 implements PreparedBulkSetEntry {
 
     private final int chunkRelX;
     private final int csIdx;
+    private final int csRelY;
     private final int chunkRelZ;
 
     private Chunk nmsChunk;
@@ -33,6 +34,7 @@ public class PreparedBulkSetEntry115 implements PreparedBulkSetEntry {
 
         this.chunkRelX = entry.getX() & 15;
         this.csIdx = entry.getY() >> 4;
+        this.csRelY = this.entry.getY() & 15;
         this.chunkRelZ = entry.getZ() & 15;
 
         this.blockPos = new BlockPosition(this.entry.getX(), this.entry.getY(), this.entry.getZ());
@@ -95,16 +97,15 @@ public class PreparedBulkSetEntry115 implements PreparedBulkSetEntry {
         IBlockData prevBlockData;
         boolean isChunkEmptyPrior = this.chunkSection.c();
 
-        int csRelY = this.entry.getY() & 15;
         boolean useLock = !options.contains(SetBlockOption.WRITE_LOCK_FREE);
         if (!options.contains(SetBlockOption.WRITE_UNSAFE)) {
-            prevBlockData = this.chunkSection.setType(this.chunkRelX, csRelY, this.chunkRelZ, this.data, useLock);
+            prevBlockData = this.chunkSection.setType(this.chunkRelX, this.csRelY, this.chunkRelZ, this.data, useLock);
         } else if (useLock) {
             DataPaletteBlock<IBlockData> palette = this.chunkSection.getBlocks();
-            prevBlockData = palette.setBlock(this.chunkRelX, csRelY, this.chunkRelZ, this.data);
+            prevBlockData = palette.setBlock(this.chunkRelX, this.csRelY, this.chunkRelZ, this.data);
         } else {
             DataPaletteBlock<IBlockData> palette = this.chunkSection.getBlocks();
-            prevBlockData = palette.b(this.chunkRelX, csRelY, this.chunkRelZ, this.data);
+            prevBlockData = palette.b(this.chunkRelX, this.csRelY, this.chunkRelZ, this.data);
         }
 
         // nms.Chunk#setType(BlockPosition, IBlockData, boolean, boolean)
@@ -142,7 +143,7 @@ public class PreparedBulkSetEntry115 implements PreparedBulkSetEntry {
                     }
                 }
 
-                if (this.chunkSection.getType(this.chunkRelX, csRelY, this.chunkRelZ).getBlock() != newBlock) {
+                if (this.chunkSection.getType(this.chunkRelX, this.csRelY, this.chunkRelZ).getBlock() != newBlock) {
                     prevBlockData = null;
                 } else {
                     if (updatePrevTile) {
