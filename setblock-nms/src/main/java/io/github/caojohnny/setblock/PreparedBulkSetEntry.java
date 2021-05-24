@@ -1,7 +1,5 @@
-package io.agenttroll.github.setblock;
+package io.github.caojohnny.setblock;
 
-import io.github.agenttroll.setblock.BulkSetEntry;
-import io.github.agenttroll.setblock.SetBlockOption;
 import org.bukkit.Chunk;
 
 import java.util.EnumSet;

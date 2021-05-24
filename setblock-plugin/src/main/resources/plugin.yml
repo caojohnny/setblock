@@ -1,4 +1,4 @@
-main: io.github.agenttroll.setblock.SetBlockPlugin
+main: io.github.caojohnny.setblock.SetBlockPlugin
 version: ${project.version}
 name: SetBlock
 

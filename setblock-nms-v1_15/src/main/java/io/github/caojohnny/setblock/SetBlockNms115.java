@@ -1,7 +1,5 @@
-package io.github.agenttroll.setblock;
+package io.github.caojohnny.setblock;
 
-import io.agenttroll.github.setblock.PreparedBulkSetEntry;
-import io.agenttroll.github.setblock.SetBlockNms;
 import org.bukkit.World;
 
 public class SetBlockNms115 implements SetBlockNms {

@@ -56,7 +56,7 @@ available as code comments in the `SetBlockOption` class.
 # Building
 
 ``` shell
-git clone https://github.com/AgentTroll/setblock.git
+git clone https://github.com/caojohnny/setblock.git
 cd setblock
 ./gradlew shadowJar
 ```

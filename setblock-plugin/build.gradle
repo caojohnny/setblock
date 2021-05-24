@@ -4,7 +4,7 @@ plugins {
 
 shadowJar {
     archiveName 'SetBlockPlugin.jar'
-    relocate 'io.papermc.lib', 'io.github.agenttroll.setblock.paperlib'
+    relocate 'io.papermc.lib', 'io.github.caojohnny.setblock.paperlib'
 }
 
 processResources {

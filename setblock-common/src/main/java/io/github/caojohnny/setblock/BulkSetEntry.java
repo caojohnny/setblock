@@ -1,4 +1,4 @@
-package io.github.agenttroll.setblock;
+package io.github.caojohnny.setblock;
 
 import org.bukkit.Location;
 import org.bukkit.block.data.BlockData;

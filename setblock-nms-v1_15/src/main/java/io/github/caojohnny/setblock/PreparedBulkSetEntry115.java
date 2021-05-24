@@ -1,6 +1,5 @@
-package io.github.agenttroll.setblock;
+package io.github.caojohnny.setblock;
 
-import io.agenttroll.github.setblock.PreparedBulkSetEntry;
 import net.minecraft.server.v1_15_R1.*;
 import org.bukkit.craftbukkit.v1_15_R1.CraftChunk;
 import org.bukkit.craftbukkit.v1_15_R1.CraftWorld;

@@ -1,9 +1,7 @@
-package io.github.agenttroll.setblock;
+package io.github.caojohnny.setblock;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
-import io.agenttroll.github.setblock.PreparedBulkSetEntry;
-import io.agenttroll.github.setblock.SetBlockNms;
 import io.papermc.lib.PaperLib;
 import org.bukkit.Chunk;
 import org.bukkit.World;

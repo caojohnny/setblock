@@ -1,6 +1,5 @@
-package io.github.agenttroll.setblock;
+package io.github.caojohnny.setblock;
 
-import io.agenttroll.github.setblock.SetBlockNms;
 import io.papermc.lib.PaperLib;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
